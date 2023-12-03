@@ -2,21 +2,19 @@ package _01_write_service;
 
 import utils.Constants;
 
-import java.io.FileWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Paths;
 
 public class FileWriteService {
-    public static void main(String[] args) {
-
-        String myFile = "records_01.txt";
-        String myText = "Hello! This is our file.";
-
-        // try-with-resources
-        try(FileWriter fw =
-                    new FileWriter(Constants.BASE_PATH_OUT + "/" + myFile)) {
-            fw.write(myText);
-            System.out.println("Success.");
-        } catch (Exception e) {
-            System.out.println("Something went wrong :(" + e.getMessage());
+    public static void writeToFile(String fileName, String content) {
+        try (FileOutputStream fileOutputStream = new FileOutputStream(
+                Paths.get(Constants.BASE_PATH_OUT, fileName).toString())) {
+            byte[] bytes = content.getBytes();
+            fileOutputStream.write(bytes);
+            System.out.println("File created and saved successfully.");
+        } catch (IOException e) {
+            System.err.println("Error creating or writing file: " + e.getMessage());
         }
     }
 }

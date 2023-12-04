@@ -11,10 +11,12 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Choose an action:");
-            System.out.println("1. Create and save the file");
-            System.out.println("2. Read the file");
-            System.out.println("3. Go out");
+            System.out.println("""
+            Choose an action:
+            1. Create and save the file
+            2. Read the file
+            3. Go out
+        """);
 
             int choice = scanner.nextInt();
             scanner.nextLine(); // очистити буфер після nextInt()

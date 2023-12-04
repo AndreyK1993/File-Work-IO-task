@@ -1,9 +1,9 @@
-package _02_read_service;
+package app._02_read_service;
 
-import utils.Constants;
+import app.utils.Constants;
+
 import java.nio.file.Paths;
 
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 

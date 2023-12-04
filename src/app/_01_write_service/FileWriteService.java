@@ -1,6 +1,6 @@
-package _01_write_service;
+package app._01_write_service;
 
-import utils.Constants;
+import app.utils.Constants;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

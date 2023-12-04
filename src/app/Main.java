@@ -1,7 +1,7 @@
-package main;
+package app;
 
-import _01_write_service.FileWriteService;
-import _02_read_service.FileReadService;
+import app._01_write_service.FileWriteService;
+import app._02_read_service.FileReadService;
 
 import java.util.Scanner;
 
@@ -28,7 +28,7 @@ public class Main {
                     FileWriteService.writeToFile(writeFileName, writeContent);
                     break;
                 case 2:
-                    System.out.print("Enter the name of the file to read (with extension): ");
+                    System.out.print("Enter the name of the file to read (without extension): ");
                     String readFileName = scanner.nextLine();
                     String fileContent = FileReadService.readFromFile(readFileName);
                     System.out.println("File contents:");
